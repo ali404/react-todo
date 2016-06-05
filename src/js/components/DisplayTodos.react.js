@@ -1,35 +1,31 @@
 import React from 'react'
+import Base from './helpers/BaseComponent.react'
+
+import TodoActions from '../actions/TodoActions'
 import TodoItem from './TodoItem.react'
 
-import Base from './helpers/BaseComponent.react'
-import TodoActions from '../actions/TodoActions'
-
-export default class TodoList extends Base {
+export default class DisplayTodos extends Base {
     constructor() {
         super()
         this._bind(
             '_onToggleComplete',
-            '_onDestroy')
+            '_onToggleUncomplete',
+            '_onDestroy'
+        )
     }
 
     render() {
+        // allTodos depends on the props given
+        // they may be completed or uncompleted todos
         let allTodos = this.props.allTodos
-        console.log(allTodos)
-        let uncompletedTodos = [];
-
-        for(let key in allTodos) {
-            if(!allTodos[key].complete) {
-                uncompletedTodos.push(allTodos[key])
-            }
-        }
-
         let todos = []
 
-        for(let key in uncompletedTodos) {
+        for(let key in allTodos) {
             todos.push(
                 <TodoItem
-                    key={key}
-                    todo={uncompletedTodos[key]}
+                    key={allTodos[key].id}
+                    todo={allTodos[key]}
+                    onToggleUncomplete={this._onToggleUncomplete}
                     onToggleComplete={this._onToggleComplete}
                     onDestroy={this._onDestroy}
                 />
@@ -47,6 +43,10 @@ export default class TodoList extends Base {
 
     _onToggleComplete(id) {
         TodoActions.toggleComplete(id)
+    }
+
+    _onToggleUncomplete(id) {
+        TodoActions.toggleUncomplete(id)
     }
 
     _onDestroy(id) {

@@ -2,39 +2,34 @@ import React from 'react'
 import Base from './helpers/BaseComponent.react'
 import TodoActions from '../actions/TodoActions'
 
-import CompletedItem from './CompletedItem.react'
+import DisplayTodos from './DisplayTodos.react'
 
 
 export default class Footer extends Base {
     constructor() {
         super()
-        this._bind('_onUncompleteTodo')
+        this._bind('_filterCompletedTodos')
+    }
+
+    _filterCompletedTodos(allTodos) {
+        let todos = []
+        for(let key in allTodos) {
+            if(allTodos[key].complete === true) {
+                todos.push(allTodos[key])
+            }
+            else {
+                // do nothing, the todo is uncompleted
+            }
+        }
+
+        return todos
     }
 
     render() {
-        let allTodos = this.props.allTodos
-        let completedTodos = []
+        let completedTodos = this._filterCompletedTodos(this.props.allTodos)
+        let message = ''
 
-        for(key in allTodos) {
-            if(allTodos[key].complete) {
-                completedTodos.push(allTodos[key])
-            }
-        }
-        let todos = []
-
-        for(var key in completedTodos) {
-            todos.push(
-                <CompletedItem
-                    key={completedTodos[key].id}
-                    todo={completedTodos[key]}
-                    onUncompleteTodo={this._onUncompleteTodo}
-                />
-            )
-        }
-
-        let message
-
-        if(todos.length === 0) {
+        if(completedTodos.length === 0) {
             message = 'No completed todos'
         }
         else {
@@ -42,18 +37,16 @@ export default class Footer extends Base {
         }
 
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="ten columns centered">
-                        <p>{message}</p>
+            <section>
+                <div className="container">
+                    <div className="row">
+                        <div className="ten columns centered">
+                            <p className="message">{message}</p>
+                        </div>
                     </div>
-                    <ul>{todos}</ul>
                 </div>
-            </div>
+                <DisplayTodos allTodos={completedTodos} />
+            </section>
         )
-    }
-
-    _onUncompleteTodo(id) {
-        TodoActions.toggleUncomplete(id)
     }
 }

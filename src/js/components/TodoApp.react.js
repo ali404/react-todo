@@ -4,8 +4,7 @@ import Base from './helpers/BaseComponent.react'
 import TodoStore from '../stores/TodoStore'
 
 import Header from './Header.react'
-import TodoInput from './TodoInput.react'
-import TodoList from './TodoList.react'
+import MainArea from './MainArea.react'
 import Footer from './Footer.react'
 
 function getTodoState() {
@@ -34,7 +33,7 @@ export default class TodoApp extends Base {
         return (
             <main>
                 <Header />
-                <TodoList allTodos={this.state.allTodos} />
+                <MainArea allTodos={this.state.allTodos} />
                 <Footer allTodos={this.state.allTodos} />
             </main>
         )
