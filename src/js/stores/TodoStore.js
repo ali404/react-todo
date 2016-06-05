@@ -78,6 +78,34 @@ class TodoStore extends FluxStore {
     getSingle(id) {
         return _todos[id]
     }
+
+    getAllByQuery(...constraints) {
+        let todos = []
+
+        for(let key in constraints) {
+            let constraint = constraints[key]
+            if(typeof constraint === 'function') {
+                // TODO: implement function verification
+            }
+            else if(typeof constraint === 'object') {
+                for(let todoKey in _todos) {
+                    let satisfiesConstraint = true;
+                    verifFor: for(let objKey in constraint) {
+                        if(constraint[objKey] !== _todos[todoKey][objKey]) {
+                            satisfiesConstraint = false
+                            break verifFor
+                        }
+                    }
+
+                    if(satisfiesConstraint) {
+                        todos.push(_todos[todoKey])
+                    }
+                }
+            }
+        }
+
+        return todos
+    }
 }
 
 let todoStoreInstance = new TodoStore()

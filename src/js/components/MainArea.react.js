@@ -1,36 +1,21 @@
 import React from 'react'
 import Base from './helpers/BaseComponent.react'
 
-import DisplayTodos from './DisplayTodos.react'
+import DisplayTodosContainer from './DisplayTodos/DisplayTodosContainer.react'
 
 export default class MainArea extends Base {
     constructor() {
         super()
-        this._bind(
-            '_filterUncompletedTodos'
-        )
-    }
-
-    // TODO: put comment
-    _filterUncompletedTodos(allTodos) {
-        let todos = []
-        for(let key in allTodos) {
-            if(allTodos[key].complete === false) {
-                todos.push(allTodos[key])
-            }
-            else {
-                // do nothing
-            }
-        }
-
-        return todos
+        this._bind()
     }
 
     render() {
-        let uncompletedTodos = this._filterUncompletedTodos(this.props.allTodos)
+        let query = {
+            complete: false
+        }
 
         return (
-            <DisplayTodos allTodos={uncompletedTodos} />
+            <DisplayTodosContainer query={query} />
         )
     }
 }
