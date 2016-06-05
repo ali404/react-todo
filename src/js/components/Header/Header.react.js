@@ -1,9 +1,9 @@
 import React from 'react'
-import Base from './helpers/BaseComponent.react'
+import Base from '../_helpers/BaseComponent.react'
 
-import TodoInput from './TodoInput.react'
+import TodoInput from '../TodoInput/TodoInput.react'
 
-import TodoActions from '../actions/TodoActions'
+import TodoActions from '../../actions/TodoActions'
 
 export default class Header extends Base {
     constructor() {

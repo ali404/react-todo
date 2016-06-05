@@ -1,8 +1,8 @@
 import React from 'react'
-import Base from './helpers/BaseComponent.react'
-import TodoActions from '../actions/TodoActions'
+import Base from '../_helpers/BaseComponent.react'
+import TodoActions from '../../actions/TodoActions'
 
-import DisplayTodosContainer from './DisplayTodos/DisplayTodosContainer.react'
+import DisplayTodosContainer from '../DisplayTodos/DisplayTodosContainer.react'
 
 
 export default class Footer extends Base {

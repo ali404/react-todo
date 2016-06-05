@@ -1,7 +1,7 @@
 import React from 'react'
-import Base from './helpers/BaseComponent.react'
+import Base from '../_helpers/BaseComponent.react'
 
-import DisplayTodosContainer from './DisplayTodos/DisplayTodosContainer.react'
+import DisplayTodosContainer from '../DisplayTodos/DisplayTodosContainer.react'
 
 export default class MainArea extends Base {
     constructor() {

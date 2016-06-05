@@ -1,5 +1,5 @@
 import React from 'react'
-import Base from '../helpers/BaseComponent.react'
+import Base from '../_helpers/BaseComponent.react'
 
 import TodoStore from '../../stores/TodoStore'
 import DisplayTodos from './DisplayTodos.react'

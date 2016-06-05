@@ -1,8 +1,8 @@
 import React from 'react'
-import Base from '../helpers/BaseComponent.react'
+import Base from '../_helpers/BaseComponent.react'
 
 import TodoActions from '../../actions/TodoActions'
-import TodoItem from '../TodoItem.react'
+import TodoItem from '../TodoItem/TodoItem.react'
 
 export default class DisplayTodos extends Base {
     constructor() {
