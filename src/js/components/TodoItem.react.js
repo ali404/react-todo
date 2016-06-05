@@ -14,10 +14,24 @@ export default class TodoItem extends Base {
         let text = this.props.todo.text
 
         return (
-            <div>
-                <p onDoubleClick={this._onDoubleClick}>{text}</p>
-                <button onClick={this._toggleComplete}>Complete it</button>
-                <button onClick={this._destroy}>Delete it</button>
+            <div className="ten columns card centered">
+                <p
+                    onDoubleClick={this._onDoubleClick}
+                    className="card-text">
+                        {text}
+                </p>
+                <div className="card-buttons">
+                    <div
+                        onClick={this._toggleComplete}
+                        className="clickable complete">
+                            <i className="material-icons">done</i>
+                    </div>
+                    <div
+                        onClick={this._destroy}
+                        className="clickable destroy">
+                            <i className="material-icons">delete</i>
+                    </div>
+                </div>
             </div>
         )
     }

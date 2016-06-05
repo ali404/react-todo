@@ -32,10 +32,23 @@ export default class Footer extends Base {
             )
         }
 
+        let message
+
+        if(todos.length === 0) {
+            message = 'No completed todos'
+        }
+        else {
+            message = 'Completed todos: '
+        }
+
         return (
-            <div>
-                <hr />
-                <ul>{todos}</ul>
+            <div className="container">
+                <div className="row">
+                    <div className="ten columns centered">
+                        <p>{message}</p>
+                    </div>
+                    <ul>{todos}</ul>
+                </div>
             </div>
         )
     }

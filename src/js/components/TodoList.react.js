@@ -37,7 +37,11 @@ export default class TodoList extends Base {
         }
 
         return (
-            <ul>{todos}</ul>
+            <div className="container">
+                <div className="row">
+                    <ul>{todos}</ul>
+                </div>
+            </div>
         )
     }
 

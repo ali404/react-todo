@@ -25,6 +25,7 @@ export default class TodoInput extends Base {
         return (
             <div id="todo-input">
                 <input
+                    className="input-normal"
                     type="text"
                     onChange={this._onChange}
                     onKeyDown={this._onKeyDown}

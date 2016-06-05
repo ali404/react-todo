@@ -13,9 +13,13 @@ export default class Header extends Base {
 
     render() {
         return (
-            <div>
-                <h1>TODO App</h1>
-                <TodoInput onSave={this._onSave} />
+            <div className="container">
+                <div className="row">
+                    <div className="ten columns centered">
+                        <h1 className="title-centered">TODO App</h1>
+                        <TodoInput onSave={this._onSave} />
+                    </div>
+                </div>
             </div>
         )
     }
