@@ -9,22 +9,34 @@ module.exports = function(config) {
             'tests.webpack.js'
         ],
         preprocessors: {
-            'tests.webpack.js': ['webpack', 'sourcemap']
+            'tests.webpack.js': ['webpack', 'sourcemap'],
+            'src/**/*.react.js': ['coverage']
         },
-        reporters: ['dots'],
+        reporters: ['dots', 'progress', 'coverage'],
         webpack: {
             devtool: 'inline-source-map',
             module: {
                 loaders: [
                     {
                         test: /\.js$/,
-                        loader: 'babel-loader'
+                        loader: 'babel-loader',
+                        exclude: /node_modules/
                     }
                 ]
+            },
+            externals: {
+                'cheerio': 'window',
+                'react/addons': true,
+                'react/lib/ExecutionEnvironment': true,
+                'react/lib/ReactContext': true
             }
         },
         webpackServer: {
             noInfo: true
+        },
+        coverageReporter: {
+            type: 'html',
+            dir: 'coverage/'
         }
     })
 }
