@@ -15,6 +15,7 @@ function create(text) {
         dateCompleted: undefined,
         text: text
     }
+
 }
 
 function destroy(id) {

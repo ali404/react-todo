@@ -9,7 +9,7 @@ export default class TodoSingle extends Base {
     render() {
         return (
             <div>
-
+                {this.props.params.todoId}
             </div>
         )
     }

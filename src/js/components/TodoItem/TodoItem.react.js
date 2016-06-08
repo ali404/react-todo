@@ -1,6 +1,8 @@
 import React from 'react'
 import Base from '../_helpers/BaseComponent.react'
 
+import {Link} from 'react-router'
+
 export default class TodoItem extends Base {
     constructor() {
         super()
@@ -12,7 +14,9 @@ export default class TodoItem extends Base {
 
     render() {
         let text = this.props.todo.text
+        let id = this.props.todo.id
         let completed = this.props.todo.complete
+        let todoLink = "/" + id
 
         let buttons
 
@@ -52,10 +56,11 @@ export default class TodoItem extends Base {
         }
 
         return (
+
             <div className="ten columns card centered">
-                <p className="card-text">
+                <Link className="card-text" to={todoLink}>
                         {text}
-                </p>
+                </Link>
                 {buttons}
             </div>
         )
