@@ -35,11 +35,10 @@ export default class Header extends Base {
             <header className="header">
                 <div className="container">
                     <div className="header-menu">
-                        <div className={buttonClass} onClick={this._toggleMenu}>
-                            <i className="material-icons fontss">menu</i>
-                        </div>
                         <div className="header-menu--title">
-                            <h1 className="header-menu--logo">Story</h1>
+                            <h1 className="header-menu--logo">
+                                <i className="material-icons">import_contacts</i>
+                            </h1>
                         </div>
                     </div>
                 </div>
@@ -51,6 +50,9 @@ export default class Header extends Base {
                         </li>
                         <li className="header-navigation--element">
                             <Link to="/stories" className="">Stories</Link>
+                        </li>
+                        <li className="header-navigation--element">
+                            <Link to="/stories" className="">Labels</Link>
                         </li>
                     </ul>
                     </nav>

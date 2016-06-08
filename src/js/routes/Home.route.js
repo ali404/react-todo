@@ -11,9 +11,7 @@ export default class Home extends Base {
 
     render() {
         return (
-            <main>
-                <StoryInputContainer />
-            </main>
+            <StoryInputContainer />
         )
     }
 }

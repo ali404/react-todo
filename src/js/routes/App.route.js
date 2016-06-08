@@ -12,7 +12,9 @@ export default class App extends Base {
         return (
             <div>
                 <Header />
-                {this.props.children}
+                <main>
+                    {this.props.children}
+                </main>
             </div>
         )
     }
