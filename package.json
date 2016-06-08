@@ -13,6 +13,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "flux": "^2.1.1",
+    "keymirror": "^0.1.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.1"

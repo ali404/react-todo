@@ -2,33 +2,24 @@ import React from 'react'
 import Base from '../_helpers/BaseComponent.react'
 import {Link} from 'react-router'
 
-import TodoInput from '../TodoInput/TodoInput.react'
-
-import TodoActions from '../../actions/TodoActions'
-
-
-
 export default class Header extends Base {
     constructor() {
         super()
-        this._bind('_onSave')
     }
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="ten columns centered">
-                        <h1 className="title-centered">TODO App</h1>
-                        <Link to="/todos">Todos</Link>
-                        <Link to="/">Home</Link>
+            <header>
+                <div className="container">
+                    <div className="row">
+                        <div className="ten columns centered">
+                            <h1 className="title-centered">Story</h1>
+                            <Link to="/">Home</Link>
+                            <Link to="/stories">Stories</Link>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </header>
         )
-    }
-
-    _onSave(text) {
-        TodoActions.create(text)
     }
 }

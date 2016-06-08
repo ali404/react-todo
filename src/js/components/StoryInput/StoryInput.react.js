@@ -3,11 +3,12 @@ import Base from '../_helpers/BaseComponent.react'
 
 function getInputInitialState() {
     return {
-        value: ''
+        titleValue: '',
+        textValue: ''
     }
 }
 
-export default class TodoInput extends Base {
+export default class StoryInput extends Base {
 
     constructor() {
         super()
@@ -21,16 +22,26 @@ export default class TodoInput extends Base {
     }
 
     render() {
-        let textValue = this.state.value
+        let titleValue = this.state.titleValue
+        let textValue = this.state.textValue
         return (
             <div id="todo-input">
-                <input
+                <div
+                    contentEditable="true"
+                    placeholder="Story title"
                     className="input-normal"
-                    type="text"
                     onChange={this._onChange}
-                    onKeyDown={this._onKeyDown}
                     value={textValue}
                 />
+                <div
+                    contentEditable="true"
+                    placeholder="Story text"
+                    className=""
+                    value={textValue}
+                />
+                <button onClick={this._save}>
+                    Save Story
+                </button>
             </div>
         )
     }

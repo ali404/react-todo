@@ -4,15 +4,16 @@ import  {Router, Route, IndexRoute, Link, browserHistory} from 'react-router'
 
 import App from './routes/App.route'
 import Home from './routes/Home.route'
-import TodoSingle from './routes/TodoSingle.route'
-import Todos from './routes/Todos.route'
+
+import Stories from './routes/Stories.route'
+import StoriesSingle from './routes/StoriesSingle.route'
 
 let routes = (
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={Home} />
-            <Route path="/todos" component={Todos} />
-            <Route path="/:todoId" component={TodoSingle} />
+            <Route path="/stories" component={Stories} />
+            <Route path="/stories/:storiesId" component={StoriesSingle} />
         </Route>
     </Router>
 )

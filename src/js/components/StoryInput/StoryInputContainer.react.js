@@ -1,8 +1,8 @@
 import React from 'react'
 import Base from '../_helpers/BaseComponent.react'
 
-import TodoInput from './TodoInput.react'
-import TodoActions from '../../actions/TodoActions'
+import StoryInput from './StoryInput.react'
+import StoryActions from '../../actions/StoryActions'
 
 export default class TodoInputContainer extends Base {
     constructor() {
@@ -17,14 +17,14 @@ export default class TodoInputContainer extends Base {
             <div className="container">
                 <div className="row">
                     <div className="ten columns centered">
-                        <TodoInput onSave={this._onSave} />
+                        <StoryInput onSave={this._onSave} />
                     </div>
                 </div>
             </div>
         )
     }
 
-    _onSave(text) {
-        TodoActions.create(text)
+    _onSave(title, text) {
+        StoryActions.create(title, text)
     }
 }

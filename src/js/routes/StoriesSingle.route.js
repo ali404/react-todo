@@ -1,7 +1,7 @@
 import React from 'react'
 import Base from '../components/_helpers/BaseComponent.react'
 
-export default class TodoSingle extends Base {
+export default class StoriesSingle extends Base {
     constructor() {
         super()
     }
@@ -9,7 +9,7 @@ export default class TodoSingle extends Base {
     render() {
         return (
             <div>
-                {this.props.params.todoId}
+                {this.props.params.storiesId}
             </div>
         )
     }
