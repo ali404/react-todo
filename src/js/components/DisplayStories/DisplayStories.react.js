@@ -3,7 +3,7 @@ import Base from '../_helpers/BaseComponent.react'
 
 import StoryItem from '../StoryItem/StoryItem.react'
 
-export default class DisplayTodos extends Base {
+export default class DisplayStories extends Base {
     constructor() {
         super()
         this._bind()
@@ -18,6 +18,7 @@ export default class DisplayTodos extends Base {
                 <StoryItem
                     key={allStories[key].id}
                     story={allStories[key]}
+                    isCompact={true}
                 />
             )
         }

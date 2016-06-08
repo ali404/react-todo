@@ -13,7 +13,7 @@ let routes = (
         <Route path="/" component={App}>
             <IndexRoute component={Home} />
             <Route path="/stories" component={Stories} />
-            <Route path="/stories/:storiesId" component={StoriesSingle} />
+            <Route path="/stories/:storyId" component={StoriesSingle} />
         </Route>
     </Router>
 )

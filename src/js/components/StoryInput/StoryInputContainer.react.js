@@ -4,7 +4,7 @@ import Base from '../_helpers/BaseComponent.react'
 import StoryInput from './StoryInput.react'
 import StoryActions from '../../actions/StoryActions'
 
-export default class TodoInputContainer extends Base {
+export default class StoryInputContainer extends Base {
     constructor() {
         super()
         this._bind(

@@ -4,7 +4,7 @@ import Base from '../_helpers/BaseComponent.react'
 import StoryStore from '../../stores/StoryStore'
 import DisplayStories from './DisplayStories.react'
 
-export default class DisplayTodosContainer extends Base {
+export default class DisplayStoriesContainer extends Base {
     constructor(props) {
         super(props)
         this._bind(

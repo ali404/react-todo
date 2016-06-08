@@ -30,11 +30,12 @@ class StoryStore extends FluxStore {
     }
 
     getAll() {
-        console.log(_stories)
         return _stories
     }
 
     getSingle(id) {
+        console.log(id)
+        console.log(_stories)
         return _stories[id]
     }
 }
