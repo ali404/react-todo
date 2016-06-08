@@ -26,7 +26,7 @@ export default class StoryInput extends Base {
         let text = this.state.text
 
         return (
-            <div id="todo-input">
+            <div id="story-input">
                 <input
                     placeholder="Story title"
                     className="input-normal"
@@ -34,16 +34,18 @@ export default class StoryInput extends Base {
                     onChange={this._onChange}
                     value={title}
                 />
-                <input
+                <textarea
                     placeholder="Story text"
-                    className=""
+                    className="input-textarea"
                     name="text"
                     onChange={this._onChange}
                     value={text}
                 />
-                <button onClick={this._save}>
+                <div
+                    onClick={this._save}
+                    className="input-save">
                     Save Story
-                </button>
+                </div>
             </div>
         )
     }
