@@ -3,8 +3,8 @@ import Base from '../_helpers/BaseComponent.react'
 
 function getInputInitialState() {
     return {
-        titleValue: '',
-        textValue: ''
+        title: '',
+        text: ''
     }
 }
 
@@ -22,22 +22,24 @@ export default class StoryInput extends Base {
     }
 
     render() {
-        let titleValue = this.state.titleValue
-        let textValue = this.state.textValue
+        let title = this.state.title
+        let text = this.state.text
+
         return (
             <div id="todo-input">
-                <div
-                    contentEditable="true"
+                <input
                     placeholder="Story title"
                     className="input-normal"
+                    name="title"
                     onChange={this._onChange}
-                    value={textValue}
+                    value={title}
                 />
-                <div
-                    contentEditable="true"
+                <input
                     placeholder="Story text"
                     className=""
-                    value={textValue}
+                    name="text"
+                    onChange={this._onChange}
+                    value={text}
                 />
                 <button onClick={this._save}>
                     Save Story
@@ -47,9 +49,9 @@ export default class StoryInput extends Base {
     }
 
     _onChange(e) {
-        this.setState({
-            value: e.target.value
-        })
+        let state = {}
+        state[e.target.name] = e.target.value
+        this.setState(state)
     }
 
     _onKeyDown(e) {
@@ -59,9 +61,10 @@ export default class StoryInput extends Base {
     }
 
     _save() {
-        this.props.onSave(this.state.value)
+        this.props.onSave(this.state.title, this.state.text)
         this.setState({
-            value: ''
+            title: '',
+            text: '',
         })
     }
 }

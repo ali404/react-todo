@@ -25,7 +25,7 @@ export default class DisplayTodosContainer extends Base {
     }
 
     componentWillUnmount() {
-        StoryStore.removeListener(this._onChange)
+        StoryStore.removeChangeListener(this._onChange)
     }
 
     render() {
