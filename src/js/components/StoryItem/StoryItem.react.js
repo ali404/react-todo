@@ -9,10 +9,13 @@ export default class StoryItem extends Base {
     render() {
         let story = this.props.story
         return (
-            <div>
-                <p>{story.title}</p>
-                <p>{story.text}</p>
-                <hr />
+            <div className="story">
+                <div className="story-title">
+                    {story.title}
+                </div>
+                <div className="story-text">
+                    {story.text}
+                </div>
             </div>
         )
     }

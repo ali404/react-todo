@@ -23,12 +23,10 @@ export default class Header extends Base {
     render() {
         let menuClass = classNames({
             'header-collapsable': true,
-            'active': this.state.isMenuActive
         })
 
         let buttonClass = classNames({
             'header-menu--button': true,
-            'active': this.state.isMenuActive
         })
 
         return (
@@ -36,9 +34,9 @@ export default class Header extends Base {
                 <div className="container">
                     <div className="header-menu">
                         <div className="header-menu--title">
-                            <h1 className="header-menu--logo">
+                            <Link to="/" className="header-menu--logo">
                                 <i className="material-icons">import_contacts</i>
-                            </h1>
+                            </Link>
                         </div>
                     </div>
                 </div>

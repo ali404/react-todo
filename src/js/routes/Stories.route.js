@@ -11,10 +11,9 @@ export default class Stories extends Base {
 
     render() {
         return (
-            <div>
-                Stories:
+            <section>
                 <DisplayStoriesContainer />
-            </div>
+            </section>
         )
     }
 }
